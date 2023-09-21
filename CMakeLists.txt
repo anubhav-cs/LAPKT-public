@@ -218,7 +218,7 @@ message(STATUS "BOOST_PYTHON_STATIC_LIB is ${BOOST_PYTHON_STATIC_LIB}")
 list(APPEND Boost_Required_Components
   program_options
   random
-  headers
+  # headers
 )
 find_package(Boost 
   REQUIRED COMPONENTS ${Boost_Required_Components} 
