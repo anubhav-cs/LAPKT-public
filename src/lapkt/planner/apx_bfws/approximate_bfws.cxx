@@ -205,7 +205,7 @@ float Approximate_BFWS::do_search_iterative(Search_Engine &engine,
 
   unsigned i = has_arity_2 ? 1 : 0;
   std::cout << "Num Partitions: " << m_partition_size << std::endl;
-  while (!m_found_plan && ++i <= plan_prob.num_fluents())
+  while (!m_found_plan && i <= m_max_novelty && ++i <= plan_prob.num_fluents())
   {
     std::cout << "Iteration- k=" << i << std::endl;
     engine.set_max_novelty(i);
