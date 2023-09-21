@@ -211,11 +211,8 @@ float BFWS::do_anytime(Anytime_RWA &engine)
 	return total_time;
 }
 
-void BFWS::solve()
+void BFWS::solve(aptk::STRIPS_Problem* prob)
 {
-
-	aptk::STRIPS_Problem *prob = instance();
-
 	Fwd_Search_Problem search_prob(prob);
 
 	std::ofstream plan_stream;

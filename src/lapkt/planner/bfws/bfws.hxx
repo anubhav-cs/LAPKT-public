@@ -157,7 +157,7 @@ public:
 	virtual ~BFWS();
 
 	void setup();
-	void solve();
+	void solve(aptk::STRIPS_Problem* prob);
 
 	std::string m_log_filename;
 	std::string m_plan_filename;
