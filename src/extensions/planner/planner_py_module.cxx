@@ -37,6 +37,7 @@ PYBIND11_MODULE(planner, m)
     .def("get_atom_name", &Planner::get_atom_name)
     .def("get_domain_name", &Planner::get_domain_name)
     .def("get_problem_name", &Planner::get_problem_name)
+    .def_readwrite("plan", &Planner::plan)
     // .def("solve", &Planner::solve)
     // .def("setup", &Planner::setup)
   ;

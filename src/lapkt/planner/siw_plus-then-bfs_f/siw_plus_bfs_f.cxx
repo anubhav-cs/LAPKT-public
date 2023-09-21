@@ -33,7 +33,7 @@ float SIW_PLUS_BFS_F_Planner::do_stage_1(SIW_Plus_Fwd &engine, float &cost)
 	engine.set_max_bound(m_iw_bound - 1);
 	engine.start();
 
-	std::vector<aptk::Action_Idx> plan;
+	plan.clear();
 	cost = 0.0f;
 	;
 
@@ -97,7 +97,7 @@ float SIW_PLUS_BFS_F_Planner::do_stage_2(Anytime_GBFS_H_Add_Rp_Fwd &engine, floa
 
 	engine.start(B);
 
-	std::vector<aptk::Action_Idx> plan;
+	plan.clear();
 	cost = 0.0f;
 
 	float ref = aptk::time_used();

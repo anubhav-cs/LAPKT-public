@@ -55,7 +55,7 @@ float Approximate_SIW::do_search(SIW_Fwd &engine)
 	engine.set_max_bound(m_iw_bound - 1);
 	engine.start();
 
-	std::vector<aptk::Action_Idx> plan;
+	plan.clear();
 	float cost;
 
 	float ref = aptk::time_used();

@@ -31,7 +31,7 @@ float RPIW_Planner::do_search_single_goal(RP_IW_Fwd &engine, aptk::STRIPS_Proble
 
 	std::ofstream details(m_log_filename);
 
-	std::vector<aptk::Action_Idx> plan;
+	plan.clear();
 	float cost;
 
 	float ref = aptk::time_used();
@@ -120,7 +120,7 @@ float RPIW_Planner::do_search(RP_IW_Fwd &engine, aptk::STRIPS_Problem &plan_prob
 	engine.set_bound(m_iw_bound);
 	engine.start();
 
-	std::vector<aptk::Action_Idx> plan;
+	plan.clear();
 	float cost;
 
 	float ref = aptk::time_used();

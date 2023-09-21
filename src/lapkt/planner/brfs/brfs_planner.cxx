@@ -28,7 +28,7 @@ float BRFS_Planner::do_search(BRFS_Fwd &engine)
 
 	engine.start();
 
-	std::vector<aptk::Action_Idx> plan;
+	plan.clear();
 	float cost;
 
 	float ref = aptk::time_used();

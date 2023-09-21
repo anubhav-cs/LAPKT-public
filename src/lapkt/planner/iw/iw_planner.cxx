@@ -39,7 +39,7 @@ float IW_Planner::do_search_single_goal(Search_Engine &engine,
 {
     std::ofstream details(m_log_filename);
 
-    std::vector<aptk::Action_Idx> plan;
+    plan.clear();
     float cost;
 
     float ref = aptk::time_used();
@@ -133,7 +133,7 @@ float IW_Planner::do_inc_bound_search(Search_Engine &engine, aptk::STRIPS_Proble
     unsigned expanded_f = 0;
     unsigned generated_f = 0;
     unsigned pruned_f = 0;
-    std::vector<aptk::Action_Idx> plan;
+    plan.clear();
     float cost;
     do
     {
@@ -210,7 +210,7 @@ float IW_Planner::do_search(Search_Engine &engine, aptk::STRIPS_Problem &plan_pr
     engine.set_bound(m_iw_bound);
     engine.start();
 
-    std::vector<aptk::Action_Idx> plan;
+    plan.clear();
     float cost;
 
     float ref = aptk::time_used();

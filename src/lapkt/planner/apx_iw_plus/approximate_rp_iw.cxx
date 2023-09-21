@@ -49,7 +49,7 @@ float Approximate_RP_IW::do_inc_bound_search(Search_Engine &engine, aptk::STRIPS
   unsigned expanded_f = 0;
   unsigned generated_f = 0;
   unsigned pruned_f = 0;
-  std::vector<aptk::Action_Idx> plan;
+  plan.clear();
   float cost;
   do
   {
@@ -125,7 +125,7 @@ float Approximate_RP_IW::do_search(Search_Engine &engine, aptk::STRIPS_Problem &
   engine.set_bound(m_iw_bound);
   engine.start();
 
-  std::vector<aptk::Action_Idx> plan;
+  plan.clear();
   float cost;
 
   float ref = aptk::time_used();

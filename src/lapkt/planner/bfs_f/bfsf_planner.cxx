@@ -29,7 +29,7 @@ float BFS_f_Planner::do_search(Anytime_GBFS_H_Add_Rp_Fwd &engine)
 	engine.set_bound(m_max_novelty);
 	engine.start();
 
-	std::vector<aptk::Action_Idx> plan;
+	plan.clear();
 	float cost;
 
 	float ref = aptk::time_used();

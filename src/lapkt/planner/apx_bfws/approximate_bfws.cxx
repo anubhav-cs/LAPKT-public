@@ -63,7 +63,7 @@ float Approximate_BFWS::do_search(Search_Engine &engine,
   std::ofstream details("execution.details");
   engine.start(m_cost_bound);
 
-  std::vector<aptk::Action_Idx> plan;
+  plan.clear();
   m_cost = infty;
 
   float ref = aptk::time_used();
@@ -195,7 +195,7 @@ float Approximate_BFWS::do_search_iterative(Search_Engine &engine,
   aptk::STRIPS_Problem &plan_prob, bool has_arity_2, float prev_time_taken)
 {
   std::ofstream details("execution.details");
-  std::vector<aptk::Action_Idx> plan;
+  plan.clear();
   m_cost = infty;
 
   float ref = aptk::time_used();
@@ -341,7 +341,7 @@ float Approximate_BFWS::do_anytime(Anytime_RWA &engine)
   details << "Branch & Bound search: Initial Bound = " << m_cost_bound << std::endl;
   engine.set_schedule(1000, 1, 10);
 
-  std::vector<aptk::Action_Idx> plan;
+  plan.clear();
 
   float ref = aptk::time_used();
   float t0 = aptk::time_used();

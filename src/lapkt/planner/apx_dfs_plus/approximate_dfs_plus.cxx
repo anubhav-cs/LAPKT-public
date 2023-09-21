@@ -41,7 +41,7 @@ float Approximate_DFS_Plus::do_search(DFS_Plus_Fwd &engine)
 	engine.set_bound(m_iw_bound);
 	engine.start();
 
-	std::vector<aptk::Action_Idx> plan;
+	plan.clear();
 	float cost;
 
 	float ref = aptk::time_used();

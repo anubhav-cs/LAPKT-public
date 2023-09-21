@@ -2,6 +2,7 @@
 #define __PLANNER__
 #include <lapkt/model/fluent.hxx>
 #include <lapkt/model/strips_prob.hxx>
+#include <lapkt/model/search_prob.hxx>
 
 class Planner
 {
@@ -29,6 +30,7 @@ public:
   std::string get_domain_name() const { return m_problem->domain_name(); }
   std::string get_problem_name() const { return m_problem->problem_name(); }
 
+  std::vector<aptk::Action_Idx> plan;
   std::string m_log_filename;
   std::string m_plan_filename;
 

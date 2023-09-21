@@ -46,7 +46,7 @@ float DFIW_Planner::do_search(IW_Fwd &engine)
 	engine.set_bound(m_iw_bound);
 	engine.start();
 
-	std::vector<aptk::Action_Idx> plan;
+	plan.clear();
 	float cost;
 
 	float ref = aptk::time_used();

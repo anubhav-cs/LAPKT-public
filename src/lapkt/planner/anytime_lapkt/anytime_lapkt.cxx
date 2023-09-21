@@ -32,7 +32,7 @@ float AT_LAPKT_Planner::do_stage_1(SIW_Plus_Fwd &engine, float &cost)
 	engine.set_max_bound(m_iw_bound - 1);
 	engine.start();
 
-	std::vector<aptk::Action_Idx> plan;
+	plan.clear();
 	cost = 0.0f;
 	;
 
@@ -97,7 +97,7 @@ float AT_LAPKT_Planner::do_stage_3(Anytime_RWA &engine, float B, float &cost)
 	m_details << "Branch & Bound search: Initial Bound = " << B << std::endl;
 	engine.set_schedule(1000, 1, 10);
 
-	std::vector<aptk::Action_Idx> plan;
+	plan.clear();
 	cost = infty;
 
 	float ref = aptk::time_used();
@@ -159,7 +159,7 @@ float AT_LAPKT_Planner::do_stage_2(Anytime_GBFS_H_Add_Rp_Fwd &engine, float B, f
 
 	engine.start(B);
 
-	std::vector<aptk::Action_Idx> plan;
+	plan.clear();
 	cost = 0.0f;
 
 	float ref = aptk::time_used();
