@@ -97,7 +97,6 @@ float Approximate_BFWS::do_search(Search_Engine &engine,
     t0 = tf;
     expanded_0 = expanded_f;
     generated_0 = generated_f;
-    plan.clear();
 
     float total_time = aptk::time_used() - ref;
     std::cout << "Total time: " << total_time << std::endl;
@@ -244,7 +243,6 @@ float Approximate_BFWS::do_search_iterative(Search_Engine &engine,
     t0 = tf;
     expanded_0 = expanded_f;
     generated_0 = generated_f;
-    plan.clear();
 
     float total_time = aptk::time_used() - ref;
     std::cout << "Total time: " << total_time << std::endl;
@@ -377,7 +375,6 @@ float Approximate_BFWS::do_anytime(Anytime_RWA &engine)
     t0 = tf;
     expanded_0 = expanded_f;
     generated_0 = generated_f;
-    plan.clear();
   }
   float total_time = aptk::time_used() - ref;
   details << "Total time: " << total_time << std::endl;

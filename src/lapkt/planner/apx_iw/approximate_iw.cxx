@@ -160,7 +160,6 @@ float Approximate_IW::do_search(Search_Engine &engine, aptk::STRIPS_Problem &pla
     t0 = tf;
     expanded_0 = expanded_f;
     generated_0 = generated_f;
-    plan.clear();
   }
   else
   {
