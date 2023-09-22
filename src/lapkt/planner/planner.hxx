@@ -7,6 +7,20 @@
 class Planner
 {
 public:
+
+  struct RunStatistics {
+    unsigned num_fluents = 0;
+    unsigned num_actions = 0;
+    unsigned num_node_expanded = 0;
+    unsigned num_node_generated = 0;
+    unsigned highest_novelty = 0; // of nodes in "explicit search tree"
+    // "explicit search tree" means the tree generated during the search
+
+    float runtime = 0.0;
+    float plan_cost = 0.0;
+  };
+
+
   Planner(){}
 
   virtual ~Planner(){};
@@ -33,6 +47,7 @@ public:
   std::vector<aptk::Action_Idx> plan;
   std::string m_log_filename;
   std::string m_plan_filename;
+  RunStatistics statistics;
 
 protected:
   template <typename Search_Engine>

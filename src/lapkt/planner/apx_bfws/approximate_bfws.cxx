@@ -73,6 +73,9 @@ float Approximate_BFWS::do_search(Search_Engine &engine,
   unsigned generated_0 = engine.generated();
   std::cout << "Num Partitions: " << m_partition_size << std::endl;
 
+  statistics.num_actions = plan_prob.num_actions();
+  statistics.num_fluents = plan_prob.num_fluents();
+
   m_found_plan = engine.find_solution(m_cost, plan);
 
   if (m_found_plan)
@@ -100,11 +103,21 @@ float Approximate_BFWS::do_search(Search_Engine &engine,
 
     float total_time = aptk::time_used() - ref;
     std::cout << "Total time: " << total_time << std::endl;
+    statistics.runtime = total_time;
+
     std::cout << "Nodes generated during search: " << engine.generated() << std::endl;
+    statistics.num_node_generated = engine.generated();
+
     std::cout << "Nodes expanded during search: " << engine.expanded() << std::endl;
+    statistics.num_node_expanded = engine.expanded();
+
     std::cout << "Plan found with cost: " << m_cost << std::endl;
+    statistics.plan_cost = m_cost;
+
     std::cout << "Max novelty node generated: " << engine.get_max_novelty_generated()
           << std::endl;
+    statistics.highest_novelty = engine.get_max_novelty_generated();
+
     std::cout << "Max novelty node expanded: " << engine.get_max_novelty_expanded()
           << std::endl;
     const unsigned *generated_nov = engine.generated_by_novelty();
